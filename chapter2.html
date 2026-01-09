@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Probability & Random Variables – Theory</title>
+<title>Probability & Naïve Bayes – Topic Explanation</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
@@ -19,7 +19,8 @@ body{
     background:linear-gradient(135deg,#667eea,#764ba2);
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items:flex-start;
+    padding-top:50px;
 }
 
 .container{
@@ -44,8 +45,21 @@ h2{
 }
 
 p{
-    margin:10px 0;
+    margin:12px 0;
     line-height:1.7;
+}
+
+ul{
+    margin-left:25px;
+}
+
+.formula{
+    margin:10px 0;
+    padding:10px;
+    background:rgba(0,0,0,0.25);
+    border-radius:8px;
+    font-size:15px;
+    font-weight:600;
 }
 
 footer{
@@ -60,122 +74,130 @@ footer{
 <body>
 <div class="container">
 
-<h1>Probability & Random Variables – Theory</h1>
+<h1>Probability & Naïve Bayes – Topic Explanation</h1>
 
-<h2>1. Random Experiment</h2>
-<p>A random experiment is an experiment in which the outcome cannot be predicted with certainty in advance.</p>
-<p>Examples include tossing a coin, rolling a die, or drawing a card from a deck.</p>
+<h2>1. Fundamentals of Probability</h2>
+<p><b>Random Experiment:</b> An experiment whose outcome cannot be predicted with certainty.</p>
+<p><b>Sample Space (S):</b> The set of all possible outcomes of a random experiment.</p>
+<p><b>Event:</b> Any subset of the sample space.</p>
+<p><b>Probability of an Event:</b> Measures the likelihood of occurrence of an event.</p>
+<div class="formula">P(A) = Favourable outcomes / Total outcomes</div>
 
-<h2>2. Sample Space</h2>
-<p>The sample space, denoted by <b>S</b>, is the set of all possible outcomes of a random experiment.</p>
-<p>Each element of the sample space represents a possible result.</p>
+<h2>2. Laws of Probability</h2>
 
-<h2>3. Event</h2>
-<p>An event is any subset of the sample space.</p>
-<p>An event may consist of one outcome or multiple outcomes.</p>
-
-<h2>4. Probability of an Event</h2>
-<p>The probability of an event A is defined as the ratio of favourable outcomes to total possible outcomes.</p>
-<p><b>P(A) = Number of favourable outcomes / Total outcomes</b></p>
-
-<h2>5. Complement of an Event</h2>
-<p>The complement of an event A consists of all outcomes in the sample space that are not in A.</p>
-<p><b>P(A<sup>c</sup>) = 1 − P(A)</b></p>
-
-<h2>6. Mutually Exclusive Events</h2>
-<p>Two events are said to be mutually exclusive if they cannot occur at the same time.</p>
-<p>Their intersection is empty.</p>
-<p><b>P(A ∩ B) = 0</b></p>
-
-<h2>7. Independent Events</h2>
-<p>Two events are independent if the occurrence of one does not affect the occurrence of the other.</p>
-<p><b>P(A | B) = P(A)</b></p>
-
-<h2>8. Addition Law of Probability</h2>
-<p>For overlapping events, the probability of occurrence of either event is:</p>
-<p><b>P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</b></p>
+<h3>Addition Law of Probability</h3>
+<p>Used when finding the probability of occurrence of at least one event.</p>
+<p>For overlapping events:</p>
+<div class="formula">P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</div>
 <p>For mutually exclusive events:</p>
-<p><b>P(A ∪ B) = P(A) + P(B)</b></p>
+<div class="formula">P(A ∪ B) = P(A) + P(B)</div>
 
-<h2>9. Multiplication Law of Probability</h2>
-<p>For dependent events:</p>
-<p><b>P(A ∩ B) = P(A) P(B | A)</b></p>
+<h3>Multiplication Law of Probability</h3>
+<p>Used to find the probability that two or more events occur together.</p>
+<div class="formula">P(A ∩ B) = P(A) × P(B | A)</div>
 <p>For independent events:</p>
-<p><b>P(A ∩ B) = P(A) P(B)</b></p>
+<div class="formula">P(A ∩ B) = P(A) × P(B)</div>
 
-<h2>10. Conditional Probability</h2>
-<p>Conditional probability is the probability of an event occurring given that another event has already occurred.</p>
-<p><b>P(A | B) = P(A ∩ B) / P(B)</b></p>
+<h2>3. Conditional Probability</h2>
+<p>The probability of an event occurring given that another event has already occurred.</p>
+<div class="formula">P(A | B) = P(A ∩ B) / P(B)</div>
+<p>Used in:</p>
+<ul>
+<li>Communication systems</li>
+<li>Spam filtering</li>
+<li>Medical diagnosis</li>
+</ul>
 
-<h2>11. Random Variables</h2>
-<p>A random variable assigns a numerical value to each outcome of a random experiment.</p>
-<p>It allows probabilistic outcomes to be analyzed mathematically.</p>
+<h2>4. Mutually Exclusive Events</h2>
+<p>Events that cannot occur simultaneously.</p>
+<div class="formula">A ∩ B = ∅</div>
+<p>Example: Getting a head and a tail in a single coin toss.</p>
 
-<h2>12. Discrete Random Variables</h2>
-<p>Discrete random variables take countable values.</p>
-<p>Examples include number of defective items or number of heads in coin tosses.</p>
+<h2>5. Independent Events</h2>
+<p>Events where occurrence of one does not affect the other.</p>
+<div class="formula">P(A | B) = P(A)</div>
+<p>Example: Coin toss and die roll.</p>
 
-<h2>13. Probability Mass Function (PMF)</h2>
-<p>The PMF gives the probability that a discrete random variable takes a specific value.</p>
-<p><b>P(X = x<sub>i</sub>)</b></p>
+<h2>6. Tree Diagrams & Sample Space Construction</h2>
+<p>Tree diagrams are graphical tools used to:</p>
+<ul>
+<li>Represent sequential events</li>
+<li>Generate sample spaces</li>
+<li>Visualize conditional probabilities</li>
+</ul>
+<p>Applications:</p>
+<ul>
+<li>Switch configurations</li>
+<li>Communication channels</li>
+<li>Multi-stage experiments</li>
+</ul>
 
-<h2>14. Cumulative Distribution Function (CDF)</h2>
-<p>The CDF gives the probability that a random variable is less than or equal to a given value.</p>
-<p><b>F(x) = P(X ≤ x)</b></p>
+<h2>7. Complementary Events</h2>
+<p>The complement of event A is the event that A does not occur.</p>
+<div class="formula">P(Aᶜ) = 1 − P(A)</div>
+<p>Used in:</p>
+<ul>
+<li>“At least once” problems</li>
+<li>Reliability analysis</li>
+<li>Detection and failure systems</li>
+</ul>
 
-<h2>15. Binomial Distribution</h2>
-<p>The binomial distribution represents the number of successes in n independent trials.</p>
-<p><b>P(X = k) = (n choose k) p<sup>k</sup> (1 − p)<sup>n−k</sup></b></p>
-<p><b>E[X] = np, Var(X) = np(1 − p)</b></p>
+<h2>8. Impossible and Certain Events</h2>
+<p>Impossible event: Probability = 0</p>
+<p>Certain event: Probability = 1</p>
+<p>Used to identify logically invalid outcomes.</p>
 
-<h2>16. Hypergeometric Distribution</h2>
-<p>This distribution applies when sampling is done without replacement.</p>
-<p><b>P(X = k) = [(K choose k)(N−K choose n−k)] / (N choose n)</b></p>
+<h2>9. Bayes’ Theorem</h2>
+<p>Used to reverse conditional probability.</p>
+<div class="formula">P(A | B) = [P(B | A) × P(A)] / P(B)</div>
+<p>Essential in:</p>
+<ul>
+<li>Spam filters</li>
+<li>AI systems</li>
+<li>Medical testing</li>
+<li>Fault diagnosis</li>
+</ul>
 
-<h2>17. Poisson Distribution</h2>
-<p>The Poisson distribution models rare events occurring in a fixed interval.</p>
-<p><b>P(X = k) = (λ<sup>k</sup> e<sup>−λ</sup>) / k!</b></p>
-<p><b>E[X] = Var(X) = λ</b></p>
+<h2>10. Total Probability Theorem</h2>
+<p>Used when an event depends on multiple mutually exclusive causes.</p>
+<div class="formula">P(B) = Σ P(B | Aᵢ) × P(Aᵢ)</div>
+<p>Forms the base for Bayes’ theorem.</p>
 
-<h2>18. Continuous Random Variables</h2>
-<p>Continuous random variables can take any value in a given interval.</p>
-<p>They are described using probability density functions.</p>
+<h2>11. Probability of Error</h2>
+<p>Used in:</p>
+<ul>
+<li>Communication systems</li>
+<li>Signal transmission</li>
+<li>AI and robotics</li>
+</ul>
+<p>Error occurs when:</p>
+<div class="formula">Received signal ≠ Transmitted signal</div>
 
-<h2>19. Probability Density Function (PDF)</h2>
-<p>The PDF represents the density of probability over a range of values.</p>
-<p><b>∫ f(x) dx = 1</b></p>
+<h2>12. Naïve Bayesian Classification</h2>
+<p>A supervised machine learning algorithm based on Bayes’ theorem.</p>
+<p><b>Key Assumption:</b> Attributes are conditionally independent.</p>
+<p><b>Classification Rule:</b></p>
+<div class="formula">P(Class | X) ∝ P(Class) × ∏ P(Attribute | Class)</div>
+<p>Used in:</p>
+<ul>
+<li>Spam detection</li>
+<li>Pattern recognition</li>
+<li>Medical diagnosis</li>
+<li>Data mining</li>
+</ul>
 
-<h2>20. Normal Distribution</h2>
-<p>The normal distribution is a continuous distribution characterized by mean and variance.</p>
-<p><b>f(x) = (1 / √(2πσ²)) e<sup>−(x − μ)² / (2σ²)</sup></b></p>
-
-<h2>21. Standard Normal Variable</h2>
-<p>Standardization converts a normal variable into a standard normal variable.</p>
-<p><b>Z = (X − μ) / σ</b></p>
-
-<h2>22. Expectation</h2>
-<p>The expected value represents the long-run average of a random variable.</p>
-<p><b>E[X] = Σ x<sub>i</sub>P(X = x<sub>i</sub>)</b></p>
-<p><b>E[X] = ∫ x f(x) dx</b></p>
-
-<h2>23. Variance</h2>
-<p>Variance measures the dispersion of a random variable around its mean.</p>
-<p><b>Var(X) = E[X²] − (E[X])²</b></p>
-
-<h2>24. Total Probability Theorem</h2>
-<p>This theorem is used when an event can occur due to several mutually exclusive causes.</p>
-<p><b>P(B) = Σ P(B | A<sub>i</sub>)P(A<sub>i</sub>)</b></p>
-
-<h2>25. Bayes’ Theorem</h2>
-<p>Bayes’ theorem is used to find reverse conditional probabilities.</p>
-<p><b>P(A<sub>i</sub> | B) = [P(B | A<sub>i</sub>)P(A<sub>i</sub>)] / Σ P(B | A<sub>j</sub>)P(A<sub>j</sub>)</b></p>
-
-<h2>26. Probability of Error</h2>
-<p>Probability of error occurs when the received signal differs from the transmitted signal.</p>
-<p>It is widely used in communication systems and artificial intelligence.</p>
+<h2>13. Real-World Applications of Probability</h2>
+<ul>
+<li>Artificial intelligence decision accuracy</li>
+<li>Robot obstacle detection</li>
+<li>Virus spread modeling</li>
+<li>Communication channel noise</li>
+<li>Spam filtering</li>
+<li>Data classification</li>
+</ul>
 
 <footer>
-Department of Mathematics – Probability & Statistics
+Department of Mathematics | Probability & Statistics
 </footer>
 
 </div>
