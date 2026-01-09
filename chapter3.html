@@ -2,50 +2,63 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Probability & Random Variables – Theory</title>
+<title>Chapter 3 – Probability Theory</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-*{
+body{
     margin:0;
     padding:0;
-    box-sizing:border-box;
     font-family:'Poppins',sans-serif;
-}
-
-body{
-    min-height:100vh;
     background:linear-gradient(135deg,#667eea,#764ba2);
     display:flex;
     justify-content:center;
-    align-items:center;
 }
 
 .container{
     width:90%;
-    max-width:1000px;
+    max-width:1100px;
     background:rgba(255,255,255,0.15);
     backdrop-filter:blur(12px);
     border-radius:20px;
-    padding:35px;
-    color:white;
+    padding:40px;
+    margin:40px 0;
+    color:#fff;
 }
 
 h1{
     text-align:center;
-    margin-bottom:20px;
+    margin-bottom:30px;
 }
 
 h2{
-    margin-top:30px;
-    border-left:4px solid #ffd369;
-    padding-left:10px;
+    margin-top:35px;
+    padding-left:12px;
+    border-left:5px solid #ffd369;
+}
+
+h3{
+    margin-top:20px;
 }
 
 p{
-    margin:10px 0;
-    line-height:1.7;
+    line-height:1.8;
+    margin-top:10px;
+}
+
+ul{
+    margin-left:25px;
+    margin-top:10px;
+}
+
+.formula{
+    margin:15px 0;
+    padding:14px;
+    background:rgba(255,255,255,0.18);
+    border-radius:10px;
+    text-align:center;
+    font-weight:600;
 }
 
 footer{
@@ -58,124 +71,217 @@ footer{
 </head>
 
 <body>
+
 <div class="container">
 
-<h1>Probability & Random Variables – Theory</h1>
+<h1>Chapter 3: Random Variables & Distributions</h1>
 
-<h2>1. Random Experiment</h2>
-<p>A random experiment is an experiment in which the outcome cannot be predicted with certainty in advance.</p>
-<p>Examples include tossing a coin, rolling a die, or drawing a card from a deck.</p>
+<!-- =============================== -->
 
-<h2>2. Sample Space</h2>
-<p>The sample space, denoted by <b>S</b>, is the set of all possible outcomes of a random experiment.</p>
-<p>Each element of the sample space represents a possible result.</p>
+<h2>Definition and Interpretation of Probability</h2>
 
-<h2>3. Event</h2>
-<p>An event is any subset of the sample space.</p>
-<p>An event may consist of one outcome or multiple outcomes.</p>
+<p>
+Probability is used to measure how likely an event is to occur in situations involving uncertainty.
+It helps in predicting outcomes when exact results cannot be determined in advance.
+In engineering and data science, probability supports decision-making, system analysis,
+and performance evaluation under uncertain conditions.
+</p>
 
-<h2>4. Probability of an Event</h2>
-<p>The probability of an event A is defined as the ratio of favourable outcomes to total possible outcomes.</p>
-<p><b>P(A) = Number of favourable outcomes / Total outcomes</b></p>
+<h3>Mathematical Definition</h3>
 
-<h2>5. Complement of an Event</h2>
-<p>The complement of an event A consists of all outcomes in the sample space that are not in A.</p>
-<p><b>P(A<sup>c</sup>) = 1 − P(A)</b></p>
+<p>
+The probability of an event is calculated by comparing the number of favorable outcomes
+to the total number of possible outcomes when all outcomes are equally likely.
+</p>
 
-<h2>6. Mutually Exclusive Events</h2>
-<p>Two events are said to be mutually exclusive if they cannot occur at the same time.</p>
-<p>Their intersection is empty.</p>
-<p><b>P(A ∩ B) = 0</b></p>
+<div class="formula">
+P(A) = Number of favorable outcomes / Total number of outcomes
+</div>
 
-<h2>7. Independent Events</h2>
-<p>Two events are independent if the occurrence of one does not affect the occurrence of the other.</p>
-<p><b>P(A | B) = P(A)</b></p>
+<p>
+The value of probability always lies between 0 and 1, where 0 indicates impossibility
+and 1 indicates certainty.
+</p>
 
-<h2>8. Addition Law of Probability</h2>
-<p>For overlapping events, the probability of occurrence of either event is:</p>
-<p><b>P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</b></p>
-<p>For mutually exclusive events:</p>
-<p><b>P(A ∪ B) = P(A) + P(B)</b></p>
+<!-- =============================== -->
 
-<h2>9. Multiplication Law of Probability</h2>
-<p>For dependent events:</p>
-<p><b>P(A ∩ B) = P(A) P(B | A)</b></p>
-<p>For independent events:</p>
-<p><b>P(A ∩ B) = P(A) P(B)</b></p>
+<h2>Interpretations of Probability</h2>
 
-<h2>10. Conditional Probability</h2>
-<p>Conditional probability is the probability of an event occurring given that another event has already occurred.</p>
-<p><b>P(A | B) = P(A ∩ B) / P(B)</b></p>
+<h3>1. Classical Interpretation</h3>
 
-<h2>11. Random Variables</h2>
-<p>A random variable assigns a numerical value to each outcome of a random experiment.</p>
-<p>It allows probabilistic outcomes to be analyzed mathematically.</p>
+<p>
+This interpretation is applicable when the outcomes of an experiment are equally likely.
+It is commonly used in theoretical problems such as tossing coins or rolling dice.
+</p>
 
-<h2>12. Discrete Random Variables</h2>
-<p>Discrete random variables take countable values.</p>
-<p>Examples include number of defective items or number of heads in coin tosses.</p>
+<div class="formula">
+P(A) = n(A) / n(S)
+</div>
 
-<h2>13. Probability Mass Function (PMF)</h2>
-<p>The PMF gives the probability that a discrete random variable takes a specific value.</p>
-<p><b>P(X = x<sub>i</sub>)</b></p>
+<h3>2. Empirical Interpretation</h3>
 
-<h2>14. Cumulative Distribution Function (CDF)</h2>
-<p>The CDF gives the probability that a random variable is less than or equal to a given value.</p>
-<p><b>F(x) = P(X ≤ x)</b></p>
+<p>
+Empirical probability is based on experimental data and long-run observations.
+As the number of trials increases, the relative frequency of an event approaches its probability.
+</p>
 
-<h2>15. Binomial Distribution</h2>
-<p>The binomial distribution represents the number of successes in n independent trials.</p>
-<p><b>P(X = k) = (n choose k) p<sup>k</sup> (1 − p)<sup>n−k</sup></b></p>
-<p><b>E[X] = np, Var(X) = np(1 − p)</b></p>
+<div class="formula">
+P(A) = lim (Number of times A occurs / Total trials)
+</div>
 
-<h2>16. Hypergeometric Distribution</h2>
-<p>This distribution applies when sampling is done without replacement.</p>
-<p><b>P(X = k) = [(K choose k)(N−K choose n−k)] / (N choose n)</b></p>
+<h3>3. Subjective Interpretation</h3>
 
-<h2>17. Poisson Distribution</h2>
-<p>The Poisson distribution models rare events occurring in a fixed interval.</p>
-<p><b>P(X = k) = (λ<sup>k</sup> e<sup>−λ</sup>) / k!</b></p>
-<p><b>E[X] = Var(X) = λ</b></p>
+<p>
+Subjective probability depends on individual judgment and experience rather than experimental data.
+It is often used when numerical data is unavailable, such as in forecasting or planning.
+</p>
 
-<h2>18. Continuous Random Variables</h2>
-<p>Continuous random variables can take any value in a given interval.</p>
-<p>They are described using probability density functions.</p>
+<!-- =============================== -->
 
-<h2>19. Probability Density Function (PDF)</h2>
-<p>The PDF represents the density of probability over a range of values.</p>
-<p><b>∫ f(x) dx = 1</b></p>
+<h2>Types of Events</h2>
 
-<h2>20. Normal Distribution</h2>
-<p>The normal distribution is a continuous distribution characterized by mean and variance.</p>
-<p><b>f(x) = (1 / √(2πσ²)) e<sup>−(x − μ)² / (2σ²)</sup></b></p>
+<h3>Equally Likely Events</h3>
 
-<h2>21. Standard Normal Variable</h2>
-<p>Standardization converts a normal variable into a standard normal variable.</p>
-<p><b>Z = (X − μ) / σ</b></p>
+<p>
+Events are equally likely when each possible outcome has the same chance of occurring.
+This assumption simplifies probability calculations in many theoretical models.
+</p>
 
-<h2>22. Expectation</h2>
-<p>The expected value represents the long-run average of a random variable.</p>
-<p><b>E[X] = Σ x<sub>i</sub>P(X = x<sub>i</sub>)</b></p>
-<p><b>E[X] = ∫ x f(x) dx</b></p>
+<h3>Complementary Event</h3>
 
-<h2>23. Variance</h2>
-<p>Variance measures the dispersion of a random variable around its mean.</p>
-<p><b>Var(X) = E[X²] − (E[X])²</b></p>
+<p>
+The complement of an event represents all outcomes where the event does not occur.
+Knowing the probability of an event allows easy calculation of its complement.
+</p>
 
-<h2>24. Total Probability Theorem</h2>
-<p>This theorem is used when an event can occur due to several mutually exclusive causes.</p>
-<p><b>P(B) = Σ P(B | A<sub>i</sub>)P(A<sub>i</sub>)</b></p>
+<div class="formula">
+P(A′) = 1 − P(A)
+</div>
 
-<h2>25. Bayes’ Theorem</h2>
-<p>Bayes’ theorem is used to find reverse conditional probabilities.</p>
-<p><b>P(A<sub>i</sub> | B) = [P(B | A<sub>i</sub>)P(A<sub>i</sub>)] / Σ P(B | A<sub>j</sub>)P(A<sub>j</sub>)</b></p>
+<h3>Mutually Exclusive Events</h3>
 
-<h2>26. Probability of Error</h2>
-<p>Probability of error occurs when the received signal differs from the transmitted signal.</p>
-<p>It is widely used in communication systems and artificial intelligence.</p>
+<p>
+Two events are mutually exclusive if the occurrence of one event prevents the occurrence of the other.
+Such events never overlap in the sample space.
+</p>
+
+<div class="formula">
+P(A ∩ B) = 0
+</div>
+
+<h3>Independent Events</h3>
+
+<p>
+Events are independent when the occurrence of one event does not influence the probability
+of another event.
+</p>
+
+<div class="formula">
+P(A ∩ B) = P(A) × P(B)
+</div>
+
+<h3>Dependent Events</h3>
+
+<p>
+In dependent events, the outcome of one event changes the probability of another.
+This situation commonly arises in experiments without replacement.
+</p>
+
+<div class="formula">
+P(A ∩ B) = P(A) × P(B | A)
+</div>
+
+<!-- =============================== -->
+
+<h2>Addition and Multiplication Rules</h2>
+
+<h3>Addition Rule (Mutually Exclusive)</h3>
+
+<p>
+When two events cannot occur together, the probability of either event occurring
+is the sum of their individual probabilities.
+</p>
+
+<div class="formula">
+P(A ∪ B) = P(A) + P(B)
+</div>
+
+<h3>Addition Rule (Non-Mutually Exclusive)</h3>
+
+<p>
+If events can occur simultaneously, the probability of their intersection
+must be subtracted to avoid double counting.
+</p>
+
+<div class="formula">
+P(A ∪ B) = P(A) + P(B) − P(A ∩ B)
+</div>
+
+<h3>Multiplication Rule</h3>
+
+<p>
+The multiplication rule is used to find the probability that two events occur together,
+depending on whether the events are independent or dependent.
+</p>
+
+<div class="formula">
+P(A ∩ B) = P(A) × P(B)
+</div>
+
+<div class="formula">
+P(A ∩ B) = P(A) × P(B | A)
+</div>
+
+<!-- =============================== -->
+
+<h2>Conditional Probability</h2>
+
+<p>
+Conditional probability measures the likelihood of an event occurring given that
+another related event has already occurred.
+It reduces the sample space to relevant outcomes.
+</p>
+
+<div class="formula">
+P(A | B) = P(A ∩ B) / P(B), P(B) ≠ 0
+</div>
+
+<p>
+If the conditional probability of an event equals its original probability,
+the events are considered independent.
+</p>
+
+<div class="formula">
+P(A | B) = P(A)
+</div>
+
+<!-- =============================== -->
+
+<h2>Bayes’ Theorem</h2>
+
+<p>
+Bayes’ Theorem provides a powerful method to revise probabilities when new evidence becomes available.
+It is widely used in machine learning, diagnostics, and decision support systems.
+</p>
+
+<div class="formula">
+P(A | B) = [ P(B | A) × P(A) ] / P(B)
+</div>
+
+
+
+<h3>Applications</h3>
+
+<ul>
+<li>Medical diagnosis</li>
+<li>Machine learning</li>
+<li>Spam filtering</li>
+<li>Fault detection</li>
+<li>Risk analysis</li>
+</ul>
 
 <footer>
-Department of Mathematics – Probability & Statistics
+Chapter 3 – Probability Theory | Engineering Statistics
 </footer>
 
 </div>
