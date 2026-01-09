@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sampling, Estimation and Hypothesis Testing</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:#fff;
+    min-height:100vh;
+    padding:40px 0;
+}
+
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:40px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+h2{
+    margin-top:35px;
+    border-left:4px solid #ffd369;
+    padding-left:10px;
+}
+
+h3{
+    margin-top:20px;
+}
+
+p{
+    margin:10px 0;
+    line-height:1.8;
+    text-align:justify;
+}
+
+ul{
+    margin-left:25px;
+}
+
+.formula{
+    background:rgba(0,0,0,0.25);
+    padding:12px;
+    border-radius:10px;
+    margin:12px 0;
+    font-weight:600;
+}
+
+footer{
+    text-align:center;
+    margin-top:40px;
+    font-size:13px;
+    opacity:0.85;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>Sampling, Estimation and Hypothesis Testing</h1>
+
+<h2>1. Need for Sampling</h2>
+<p>
+In many real-life situations, studying the entire population is either impossible or impractical due to limitations
+such as time, cost, and accessibility. Sampling provides an effective alternative by allowing conclusions about
+the population to be drawn using a smaller, manageable subset of data.
+</p>
+<p>
+A properly chosen sample can accurately represent the characteristics of the population. Sampling is widely
+used in engineering, quality control, social sciences, and data analysis to make reliable decisions with limited
+resources.
+</p>
+
+<h2>2. Sampling Methods</h2>
+<p>
+Sampling techniques determine how units are selected from a population. The choice of method affects the
+accuracy and reliability of results.
+</p>
+
+<p><b>Simple Random Sampling With Replacement (SRSWR):</b></p>
+<p>
+In SRSWR, each unit selected is returned to the population before the next draw. As a result, the same unit may
+appear multiple times in the sample. Each draw is independent and has equal probability.
+</p>
+
+<p><b>Simple Random Sampling Without Replacement (SRSWOR):</b></p>
+<p>
+In SRSWOR, once a unit is selected, it is not returned to the population. This ensures that all observations in
+the sample are distinct and dependent on previous selections.
+</p>
+
+<h2>3. Hypothesis Testing</h2>
+<p>
+Hypothesis testing is a formal statistical procedure used to make decisions about population parameters based
+on sample information. It involves testing an assumption (hypothesis) to determine whether it is supported by
+the data.
+</p>
+<p>
+Two hypotheses are formulated: the null hypothesis and the alternative hypothesis. Statistical evidence from the
+sample is used to decide whether to reject or accept the null hypothesis.
+</p>
+
+<h3>Null and Alternative Hypotheses</h3>
+<p>
+The null hypothesis (H₀) represents a statement of no change or no difference. The alternative hypothesis (H₁)
+represents the presence of a difference or effect.
+</p>
+
+<div class="formula">
+H₀ : μ = μ₀ <br>
+H₁ : μ ≠ μ₀ (Two-tailed) <br>
+H₁ : μ &gt; μ₀ (Right-tailed) <br>
+H₁ : μ &lt; μ₀ (Left-tailed)
+</div>
+
+<h2>4. Z-Test</h2>
+<p>
+A Z-test is used for testing hypotheses about population means or proportions when the sample size is large
+or when the population standard deviation is known. It relies on the standard normal distribution.
+</p>
+
+<h3>Conditions for Using Z-Test</h3>
+<ul>
+<li>Sample size n ≥ 30</li>
+<li>Population standard deviation σ is known</li>
+<li>Population is approximately normal</li>
+<li>Observations are independent</li>
+</ul>
+
+<h3>Z-Test Statistic</h3>
+<p>
+The Z-statistic measures how far the sample mean deviates from the hypothesized population mean in terms of
+standard error.
+</p>
+
+<div class="formula">
+Z = ( x̄ − μ₀ ) / ( σ / √n )
+</div>
+
+<h3>Decision Rule</h3>
+<p>
+The calculated Z-value is compared with the critical value obtained from the standard normal distribution table
+to decide whether to reject the null hypothesis.
+</p>
+
+<ul>
+<li>Two-tailed test: Reject H₀ if |Z| &gt; 1.96</li>
+<li>Right-tailed test: Reject H₀ if Z &gt; 1.645</li>
+<li>Left-tailed test: Reject H₀ if Z &lt; −1.645</li>
+</ul>
+
+<h2>5. Confidence Intervals</h2>
+<p>
+A confidence interval provides a range of values within which the true population parameter is expected to lie
+with a specified level of confidence. It reflects both accuracy and reliability of estimation.
+</p>
+
+<div class="formula">
+Confidence Interval = Point Estimate ± Margin of Error
+</div>
+
+<h3>Confidence Interval for Mean (σ Known)</h3>
+<p>
+When the population standard deviation is known and the sample size is large, the Z-distribution is used to
+construct the confidence interval.
+</p>
+
+<div class="formula">
+x̄ ± zα/2 (σ / √n)
+</div>
+
+<h3>Confidence Interval for Mean (σ Unknown)</h3>
+<p>
+If the population standard deviation is unknown and the sample size is small, the t-distribution is used with
+(n − 1) degrees of freedom.
+</p>
+
+<div class="formula">
+x̄ ± tα/2 (s / √n)
+</div>
+
+<h3>Confidence Interval for Population Proportion</h3>
+<p>
+Confidence intervals for proportions are used to estimate the fraction of the population possessing a certain
+characteristic.
+</p>
+
+<div class="formula">
+p̂ ± zα/2 √[ (p̂q̂) / n ]
+</div>
+
+<h2>6. Tests for Mean</h2>
+<p>
+Tests for mean help determine whether a sample mean significantly differs from a hypothesized population mean.
+</p>
+
+<h3>Single Population (σ Known)</h3>
+<div class="formula">
+Z = (x̄ − μ₀) / (σ / √n)
+</div>
+
+<h3>Single Population (σ Unknown)</h3>
+<div class="formula">
+t = (x̄ − μ₀) / (s / √n)
+</div>
+
+<h2>7. Tests for Difference of Means</h2>
+<p>
+These tests are used to compare the means of two independent populations to determine whether a significant
+difference exists.
+</p>
+
+<h3>Population SD Known</h3>
+<div class="formula">
+Z = (x̄₁ − x̄₂) / √(σ₁²/n₁ + σ₂²/n₂)
+</div>
+
+<h3>Population SD Unknown (Pooled t-test)</h3>
+<div class="formula">
+sp² = [(n₁−1)s₁² + (n₂−1)s₂²] / (n₁ + n₂ − 2)
+</div>
+
+<div class="formula">
+t = (x̄₁ − x̄₂) / [sp √(1/n₁ + 1/n₂)]
+</div>
+
+<h2>8. Tests for Proportion</h2>
+<p>
+Proportion tests are used to analyze categorical data and determine whether observed proportions differ
+significantly from assumed values.
+</p>
+
+<h3>Single Population</h3>
+<div class="formula">
+Z = (p̂ − p₀) / √(p₀q₀ / n)
+</div>
+
+<h3>Difference of Two Proportions</h3>
+<div class="formula">
+p = (x₁ + x₂) / (n₁ + n₂)
+</div>
+
+<div class="formula">
+Z = (p₁ − p₂) / √[pq(1/n₁ + 1/n₂)]
+</div>
+
+<footer>
+© 2025 Department of Mathematics | Statistical Inference Report
+</footer>
+
+</div>
+</body>
+</html>
