@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Probability & Statistics Portfolio</title>
+
+<style>
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Card */
+.container {
+    width: 85%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 35px;
+    color: white;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 10px;
+    animation: slideDown 1s ease;
+}
+
+h2 {
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 25px;
+    color: #f1f1f1;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 30px;
+}
+
+.section h3 {
+    margin-bottom: 12px;
+    border-left: 4px solid #ffd369;
+    padding-left: 10px;
+    font-weight: 500;
+}
+
+/* Info Grid */
+.info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    font-size: 15px;
+}
+
+/* Chapters */
+.chapters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.chapter {
+    background: rgba(255,255,255,0.2);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.chapter a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.chapter:hover {
+    transform: translateY(-8px) scale(1.03);
+    background: rgba(255,255,255,0.35);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Probability & Statistics Portfolio</h1>
+
+
+    <!-- Course Details -->
+    <div class="section">
+        <h3>📘 Course Details</h3>
+        <div class="info">
+            <div><b>Course Name:</b> Probability & Statistics</div>
+            <div><b>Course Code:</b>25EMAB233</div>
+            <div><b>Semester:</b> 3<sup>rd</sup></div>
+           
+        </div>
+    </div>
+
+    <!-- Student Details -->
+    <div class="section">
+        <h3>👩‍🎓 Student Details</h3>
+        <div class="info">
+            <div><b>Name:</b> Pooja B</div>
+            <div><b>USN:</b> 01FE25BCS717</div>
+            <div><b>Branch:</b> Computer Science & Engineering</div>
+      
+        </div>
+    </div>
+
+    <!-- Chapter Links -->
+    <div class="section">
+        <h3>📂 Portfolio Chapters</h3>
+        <div class="chapters">
+            <div class="chapter">
+                <a href="chapter1.html">Chapter 1<br>Description of Data</a>
+            </div>
+
+            <div class="chapter">
+                <a href="chapter2.html">Chapter 2<br>Probability</a>
+            </div>
+
+            <div class="chapter">
+                <a href="chapter3.html">Chapter 3<br>Random Variables & Distributions</a>
+            </div>
+
+            <div class="chapter">
+                <a href="chapter4.html">Chapter 4<br>Sampling & Hypothesis Testing</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Probability & Statistics Portfolio
+    </footer>
+
+</div>
+
+</body>
+</html>
